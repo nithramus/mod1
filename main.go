@@ -42,7 +42,6 @@ func main() {
 	if *mode == 0 || *name_file == "" {
 		fmt.Println("mod1: usage: ./mod1 -mode [value] -file [file] -time [time] -force [force]")
 		os.Exit(1)
-
 	}
 	if err != nil {
 		print("no such file\n")

@@ -31,6 +31,9 @@ func string_to_point(list [][]string) []point {
 		cor1, _ := strconv.ParseFloat(list[i][1], 64)
 		cor2, _ := strconv.ParseFloat(list[i][2], 64)
 		cor3, _ := strconv.ParseFloat(list[i][3], 64)
+		cor1 = math.Round(cor1 / 200)
+		cor2 = math.Round(cor2 / 200)
+		cor3 = math.Round(cor3 / 200)
 		print(cor1, "\n", cor2, "\n", cor3, "\n")
 		if cor1 == 0 || cor2 == 0 || cor1 > width-1 || cor2 > height-1 {
 			exit("Coordonnée ayant pour valeur 0")
@@ -108,5 +111,4 @@ func create_surface_bis(surface *[100][100]float64, test [][]string) {
 	list_point := string_to_point(test)
 	tri_à_bulle(list_point)
 	generate_surface(surface, list_point)
-
 }
