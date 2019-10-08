@@ -20,7 +20,6 @@ var (
 
 func init() {
 	// GLFW event handling must run on the main OS thread
-	fmt.Println("initied")
 	runtime.LockOSThread()
 }
 
@@ -56,6 +55,7 @@ func draw(surface *[100][100]float64, water *[100][100]float64, mode int, tours 
 		if time.Since(lastTime) > 5000000 {
 			lastTime = time.Now()
 			water_gen(mode, water, surface, hauteur, tours, force)
+			fmt.Println("ok")
 			glfw.PollEvents()
 			goZoom := window.GetKey(glfw.KeyA)
 			goDeZoom := window.GetKey(glfw.KeyZ)
@@ -83,10 +83,10 @@ func draw(surface *[100][100]float64, water *[100][100]float64, mode int, tours 
 				if goDeZoom == 1 {
 					zoom -= 0.1
 				}
+
 				drawScene(surface)
 				draw_water(surface, water, mode)
 				window.SwapBuffers()
-				print(hauteur, "\n")
 			}
 			hauteur += 1
 		}
@@ -240,5 +240,10 @@ func drawScene(surface *[100][100]float64) {
 		}
 		i += 1
 	}
+	fmt.Println(
+		inorm,
+		iplusone,
+		jnorm,
+		jplusone)
 	gl.End()
 }

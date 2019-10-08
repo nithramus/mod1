@@ -30,26 +30,15 @@ func test_all(water *[100][100]float64, surface *[100][100]float64) {
 }
 
 func test_water(water *[100][100]float64) {
-	fmt.Println("")
-	fmt.Println("testwater")
-	fmt.Println("")
 	for x := range water {
 		fmt.Println(water[x])
 	}
-	fmt.Println("")
-	fmt.Println("")
 }
 
 func test_suface(surface *[100][100]float64) {
-	print("\n")
-	print("\n")
 	for x := range surface {
 		fmt.Println(surface[x])
-		print("\n")
-
 	}
-	print("\n")
-	print("\n")
 }
 
 func water_gen(mode int, water *[100][100]float64, surface *[100][100]float64, hauteurfloat int, addTime int, forceInt int) {

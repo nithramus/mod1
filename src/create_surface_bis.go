@@ -11,7 +11,6 @@ func tri_à_bulle(list_point []point) {
 	for ok == 1 {
 		ok = 0
 		for i := range list_point {
-			print(list_point[i].z, ".z \n")
 			if i != 0 {
 				if list_point[i-1].z < list_point[i].z {
 					tmp = list_point[i-1]
@@ -34,7 +33,6 @@ func string_to_point(list [][]string) []point {
 		cor1 = math.Round(cor1 / 200)
 		cor2 = math.Round(cor2 / 200)
 		cor3 = math.Round(cor3 / 50)
-		print(cor1, "\n", cor2, "\n", cor3, "\n")
 		if cor1 == 0 || cor2 == 0 || cor1 > width-1 || cor2 > height-1 {
 			exit("Coordonnée ayant pour valeur 0")
 		}
@@ -69,13 +67,9 @@ func distance(a point, b point) float64 {
 }
 
 func put_point(pt point, distance_max int, surface *[100][100]float64) {
-	print(distance_max, "\n")
 	var dist float64 = float64(distance_max)
 	startx := int(pt.x - dist + 1)
 	starty := int(pt.y - dist + 1)
-	print(startx)
-	print("\n")
-	print(starty)
 	var t_point point
 	for i := startx; i <= int(pt.x+dist-1); i++ {
 		for j := starty; j <= int(pt.y+dist-1); j++ {
